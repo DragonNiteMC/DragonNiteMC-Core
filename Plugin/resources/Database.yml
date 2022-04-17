@@ -5,7 +5,7 @@ username: username
 password: password
 useSSL: false
 pool:
-  name: HyperNiteMC-Pool
+  name: DragonNiteMC-Pool
   minSize: 5
   maxSize: 10
   connectionTimeout: 30000

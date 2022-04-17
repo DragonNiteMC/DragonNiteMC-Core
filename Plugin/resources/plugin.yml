@@ -1,19 +1,19 @@
-main: com.hypernite.mc.hnmc.core.main.HyperNiteMC
+main: com.dragonnite.mc.dnmc.core.main.DragonNiteMC
 version: ${project.version}
-name: HyperNiteMC-Core
+name: DragonNiteMC-Core
 api-version: "1.15"
 description: Libraries use
 depend: [ ProtocolLib, Vault ]
 softdepend: [ PlaceholderAPI, AsyncCreateWorld ]
 authors: [ EricLam, Caxerx ]
 commands:
-  hypernitemc:
-    aliases: [ hypernite,hnmc ]
+  dragonnitemc:
+    aliases: [ dragonnite,dnmc ]
     description: show the version
   help:
     aliases: [ '?', pl ]
     description: show help command
 permissions:
-  hypernite.admin:
-    description: hypernite admin permission
+  dragonnite.admin:
+    description: dragonnite admin permission
     default: false

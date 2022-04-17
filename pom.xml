@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hypernite.mc</groupId>
-    <artifactId>hypernitemc-core</artifactId>
+    <groupId>com.dragonnite.mc</groupId>
+    <artifactId>dragonnitemc-core</artifactId>
     <version>7.6.5</version>
 
     <packaging>pom</packaging>
@@ -13,8 +13,8 @@
     </modules>
 
 
-    <name>HyperNiteMC-Core</name>
-    <description>HyperNiteMC Server Libraries</description>
+    <name>DragonNiteMC-Core</name>
+    <description>DragonNiteMC Server Libraries</description>
     <url>https://github.com/eric2788/HNMC-Core-API</url>
     <developers>
         <developer>
@@ -31,7 +31,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <module.api>${project.basedir}/API/src</module.api>
         <module.plugin>${project.basedir}/Plugin/src</module.plugin>
-        <jackson.version>2.11.0</jackson.version>
+        <jackson.version>2.13.2</jackson.version>
     </properties>
 
     <repositories>
@@ -46,8 +46,8 @@
             <url>https://jitpack.io</url>
         </repository>
         <repository>
-            <id>chu77</id>
-            <url>https://nexus.chu77.xyz/repository/developer</url>
+            <id>drangonnite</id>
+            <url>https://nexus.pulogo.xyz/repository/developer</url>
         </repository>
         <repository>
             <id>papermc</id>
@@ -61,10 +61,7 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>patched</groupId>
-            <artifactId>1.16</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>
@@ -74,11 +71,22 @@
             <artifactId>ProtocolLib</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.16.3-R0.1-SNAPSHOT</version>
+            <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-            <classifier>javadoc</classifier>
+        </dependency>
+        <dependency>
+            <groupId>patched</groupId>
+            <artifactId>1.18.2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>authlib</artifactId>
         </dependency>
     </dependencies>
 
@@ -87,19 +95,18 @@
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>
-                <version>20.1.0</version>
+                <version>23.0.0</version>
             </dependency>
             <dependency>
-                <groupId>paper</groupId>
-                <artifactId>1.16</artifactId>
-                <version>204</version>
+                <groupId>com.mojang</groupId>
+                <artifactId>authlib</artifactId>
+                <version>3.3.39</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>patched</groupId>
-                <artifactId>1.16</artifactId>
+                <artifactId>1.18.2</artifactId>
                 <version>r2</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -126,12 +133,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>com.hypernite.mc</groupId>
-                <artifactId>async-create-world</artifactId>
-                <version>1.16.3</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-kotlin</artifactId>
                 <version>${jackson.version}</version>
@@ -150,7 +151,7 @@
             <dependency>
                 <groupId>com.comphenix.protocol</groupId>
                 <artifactId>ProtocolLib</artifactId>
-                <version>4.5.1</version>
+                <version>4.8.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -169,7 +170,7 @@
             <dependency>
                 <groupId>me.clip</groupId>
                 <artifactId>placeholderapi</artifactId>
-                <version>2.11.2</version>
+                <version>2.11.1</version>
                 <scope>provided</scope>
             </dependency>
             <!--dependency>
@@ -181,14 +182,19 @@
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>3.3.1</version>
+                <version>5.0.1</version>
                 <scope>compile</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.11.0</version>
+            </dependency>
+            <dependency>
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
-                <version>20180813</version>
+                <version>20220320</version>
                 <scope>compile</scope>
                 <optional>true</optional>
             </dependency>
@@ -202,7 +208,7 @@
             <dependency>
                 <groupId>com.google.inject</groupId>
                 <artifactId>guice</artifactId>
-                <version>4.2.2</version>
+                <version>5.1.0</version>
                 <scope>compile</scope>
                 <optional>true</optional>
                 <exclusions>
@@ -219,7 +225,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.8</version>
+                <version>1.18.22</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
@@ -263,7 +269,7 @@
                                 <transformers>
                                     <transformer
                                             implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                        <mainClass>com.hypernite.mc.hnmc.core.main.HyperNiteMC</mainClass>
+                                        <mainClass>DragonNiteMC</mainClass>
                                     </transformer>
                                 </transformers>
                             </configuration>
@@ -323,14 +329,14 @@
                         <linksource>true</linksource>
                         <isOffline>false</isOffline>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <windowtitle>HyperNiteMC-Api</windowtitle>
-                        <doctitle>HyperNiteMC-Api v${project.version}</doctitle>
+                        <windowtitle>DragonNiteMC-Api</windowtitle>
+                        <doctitle>DragonNiteMC-Api v${project.version}</doctitle>
                         <verbose>true</verbose>
                         <author>true</author>
                         <version>true</version>
                         <linksource>true</linksource>
                         <notimestamp>true</notimestamp>
-                        <bottom><![CDATA[<b>© HyperNiteMC - 2020</b>]]></bottom>
+                        <bottom><![CDATA[<b>© DragonNiteMC - 2022</b>]]></bottom>
                         <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
                         <destDir>../docs</destDir>
                         <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>

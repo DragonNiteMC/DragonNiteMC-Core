@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.hypernite.mc</groupId>
-        <artifactId>hypernitemc-core</artifactId>
+        <groupId>com.dragonnite.mc</groupId>
+        <artifactId>dragonnitemc-core</artifactId>
         <version>7.6.5</version>
     </parent>
 
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.hypernite.mc</groupId>
+            <groupId>com.dragonnite.mc</groupId>
             <artifactId>core-api</artifactId>
             <version>${parent.version}</version>
             <scope>compile</scope>
@@ -46,10 +46,6 @@
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.hypernite.mc</groupId>
-            <artifactId>async-create-world</artifactId>
         </dependency>
         <dependency>
             <groupId>me.clip</groupId>

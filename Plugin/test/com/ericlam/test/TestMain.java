@@ -1,12 +1,5 @@
 package com.ericlam.test;
 
-import com.hypernite.mc.hnmc.core.main.HyperNiteMC;
-import org.bukkit.entity.Player;
-import org.bukkit.map.MapCanvas;
-import org.bukkit.map.MapRenderer;
-import org.bukkit.map.MapView;
-
-import java.util.Map;
 import java.util.regex.Pattern;
 
 public class TestMain {
