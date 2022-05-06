@@ -56,7 +56,7 @@ public class VersionUpdateListener implements Listener {
                         }
                     }, err -> {
                         api.getLogger().warning("獲取插件 " + plugin + " 的最新版本時出現錯誤: " + err.getMessage() + " (插件資源 id 可能輸入有誤。)");
-                        if (err instanceof IOException) err.printStackTrace();
+                        if (!(err instanceof IOException)) err.printStackTrace();
                     });
                 } else if (!config.resourceId_to_checks.containsKey(plugin)) {
                     api.getResourceManager(ResourceManager.Type.DRAGONNITE).fetchLatestVersion(plugin, v -> {
@@ -66,7 +66,7 @@ public class VersionUpdateListener implements Listener {
                     }, err -> {
                         if (err instanceof ResourceNotFoundException && config.ignore_unknown) return;
                         api.getLogger().warning("獲取插件 " + plugin + " 的最新版本時出現錯誤: " + err.getMessage());
-                        if (err instanceof IOException) err.printStackTrace();
+                        if (!(err instanceof IOException)) err.printStackTrace();
                     });
                 }
             }
