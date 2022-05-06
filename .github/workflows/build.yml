@@ -23,4 +23,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: DragoniteMC-Core
-          path: /Plugin/target/
+          path: ./Plugin/target/
