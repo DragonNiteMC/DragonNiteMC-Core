@@ -22,7 +22,7 @@ public class VersionFetchCommand extends VersionCommandNode {
             sender.sendMessage(config.getPrefix() + "§a 插件 " + plugin + " 的最新版本刷新完畢。 最新版本為 v" + v);
         }, err -> {
             sender.sendMessage(config.getPrefix() + "§c 插件 " + plugin + " 刷新最新版本時出現錯誤: " + err.getMessage());
-            if (err instanceof IOException) err.printStackTrace();
+            if (!(err instanceof IOException)) err.printStackTrace();
         });
     }
 }
