@@ -69,11 +69,6 @@ public class DragonNiteMC implements DragonNiteMCAPI {
     }
 
     @Override
-    public VaultAPI getVaultAPI() {
-        throw new RuntimeException("RUNTIME ERROR");
-    }
-
-    @Override
     public WorldManager getWorldManager() {
         throw new RuntimeException("RUNTIME ERROR");
     }

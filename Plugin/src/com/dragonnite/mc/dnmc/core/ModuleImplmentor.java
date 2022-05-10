@@ -47,7 +47,6 @@ public class ModuleImplmentor implements Module {
         binder.bind(PlayerSkinManager.class).to(PlayerSkinHandler.class).in(Scopes.SINGLETON);
         binder.bind(SQLDataSource.class).to(SQLDataSourceManager.class).in(Scopes.SINGLETON);
         binder.bind(TabListManager.class).to(TablistBuilder.class).in(Scopes.SINGLETON);
-        binder.bind(VaultAPI.class).to(VaultHandler.class).in(Scopes.SINGLETON);
         binder.bind(WorldManager.class).to(BukkitWorldHandler.class).in(Scopes.SINGLETON);
         binder.bind(CoreFactory.class).to(DNMainFactory.class).in(Scopes.SINGLETON);
         binder.bind(Builder.class).to(FactoryBuilder.class).in(Scopes.SINGLETON);

@@ -64,11 +64,6 @@ public interface DragonNiteMCAPI {
     CoreConfig getCoreConfig();
 
     /**
-     * @return vault 的 api
-     */
-    VaultAPI getVaultAPI();
-
-    /**
      * @return 世界管理
      */
     WorldManager getWorldManager();

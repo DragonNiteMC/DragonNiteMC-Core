@@ -61,10 +61,9 @@
 
 
     <dependencies>
-
         <dependency>
-            <groupId>com.github.MilkBowl</groupId>
-            <artifactId>VaultAPI</artifactId>
+            <groupId>net.luckperms</groupId>
+            <artifactId>api</artifactId>
         </dependency>
         <dependency>
             <groupId>com.comphenix.protocol</groupId>
@@ -155,17 +154,10 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>com.github.MilkBowl</groupId>
-                <artifactId>VaultAPI</artifactId>
-                <version>1.7</version>
+                <groupId>net.luckperms</groupId>
+                <artifactId>api</artifactId>
+                <version>5.4</version>
                 <scope>provided</scope>
-                <optional>true</optional>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>bukkit</artifactId>
-                        <groupId>org.bukkit</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>me.clip</groupId>

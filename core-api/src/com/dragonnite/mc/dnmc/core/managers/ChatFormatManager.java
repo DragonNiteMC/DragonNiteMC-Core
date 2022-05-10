@@ -17,6 +17,18 @@ public interface ChatFormatManager {
     String getFormat(Player player);
 
     /**
+     * @param player 玩家
+     * @return 玩家的前綴, 沒有時返回空白
+     */
+    String getPlayerPrefix(Player player);
+
+    /**
+     * @param player 玩家
+     * @return 玩家的後綴, 沒有時返回空白
+     */
+    String getPlayerSuffix(Player player);
+
+    /**
      * 更新 tab list
      *
      * @param player 玩家

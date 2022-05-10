@@ -5,10 +5,10 @@ import com.dragonnite.mc.dnmc.core.misc.commands.CommandNode;
 import com.dragonnite.mc.dnmc.core.chatformat.FormatDatabaseManager;
 import com.dragonnite.mc.dnmc.core.main.DragonNiteMC;
 import com.dragonnite.mc.dnmc.core.utils.Tools;
+import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.command.CommandSender;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.List;
 
 public class FormatAddCommand extends CommandNode {
@@ -25,8 +25,8 @@ public class FormatAddCommand extends CommandNode {
         FormatDatabaseManager format = DragonNiteMC.getFormatDatabaseManager();
         try {
             String group = args.get(0);
-            var groups = DragonNiteMC.getAPI().getVaultAPI().getPermission().getGroups();
-            if (Arrays.binarySearch(groups, group) < 0) {
+            var groups = LuckPermsProvider.get().getGroupManager().getGroup(group);
+            if (groups == null) {
                 sender.sendMessage(cf.getPrefix() + "§c在你的權限插件中沒有此群組。");
                 return true;
             }

@@ -6,9 +6,7 @@ import com.dragonnite.mc.dnmc.core.main.DragonNiteMC;
 import com.dragonnite.mc.dnmc.core.managers.ChatFormatManager;
 import com.dragonnite.mc.dnmc.core.managers.NameTagManager;
 import com.dragonnite.mc.dnmc.core.managers.NickManager;
-import com.dragonnite.mc.dnmc.core.managers.VaultAPI;
 import com.dragonnite.mc.dnmc.core.misc.permission.Perm;
-import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,24 +22,20 @@ import java.util.List;
 
 public class EventListener implements Listener {
 
-    private final Chat chat;
     private DNMCoreConfig dnmCoreConfig = DragonNiteMC.getDnmCoreConfig();
     @Inject
     private NameTagManager nameTagManager;
     @Inject
     private ChatFormatManager chatFormatManager;
 
-
-    @Inject
-    public EventListener(VaultAPI api) {
-        chat = api.getChat();
+    public EventListener() {
     }
 
     @EventHandler
     public void JoinHideMSG(PlayerJoinEvent e) {
         e.setJoinMessage("");
         Player player = e.getPlayer();
-        if (chat != null && !dnmCoreConfig.getConfig().useOwnScoreboard) {
+        if (!dnmCoreConfig.getConfig().useOwnScoreboard) {
             chatFormatManager.updatePlayerList(player); //update player list
             nameTagManager.addPlayer(player); //update name tag
         }

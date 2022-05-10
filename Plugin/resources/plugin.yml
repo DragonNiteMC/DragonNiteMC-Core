@@ -3,8 +3,8 @@ version: ${project.version}
 name: DragonNiteMC-Core
 api-version: "1.15"
 description: Libraries use
-depend: [ ProtocolLib, Vault ]
-softdepend: [ PlaceholderAPI, AsyncCreateWorld ]
+depend: [ ProtocolLib, LuckPerms ]
+softdepend: [ PlaceholderAPI ]
 authors: [ EricLam, Caxerx ]
 commands:
   dragonnitemc:

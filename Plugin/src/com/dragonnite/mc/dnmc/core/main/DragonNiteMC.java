@@ -12,6 +12,7 @@ import com.dragonnite.mc.dnmc.core.config.implement.DNMCoreConfig;
 import com.dragonnite.mc.dnmc.core.ericlam.ChatRunnerHandler;
 import com.dragonnite.mc.dnmc.core.factory.CoreFactory;
 import com.dragonnite.mc.dnmc.core.listener.EventListener;
+import com.dragonnite.mc.dnmc.core.listener.UpdateFormatListener;
 import com.dragonnite.mc.dnmc.core.listener.VersionUpdateListener;
 import com.dragonnite.mc.dnmc.core.listener.WorldListeners;
 import com.dragonnite.mc.dnmc.core.listener.cancelevent.OptionalListener;
@@ -24,6 +25,7 @@ import com.dragonnite.mc.dnmc.core.worlds.BukkitWorldHandler;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.dragonnite.mc.dnmc.core.ModuleImplmentor;
+import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
@@ -55,7 +57,6 @@ public class DragonNiteMC extends JavaPlugin implements DragonNiteMCAPI {
     private SQLDataSource sqlDataSource;
     private TabListManager tabListManager;
     private CommandRegister commandRegister;
-    private VaultAPI vaultAPI;
     private EventCancelManager eventCancelManager;
     private WorldManager worldManager;
     private CoreFactory coreFactory;
@@ -120,7 +121,6 @@ public class DragonNiteMC extends JavaPlugin implements DragonNiteMCAPI {
         formatDatabaseManager = injector.getInstance(FormatDatabaseManager.class);
         skinDatabaseManager = injector.getInstance(SkinDatabaseManager.class);
         eventCancelManager = injector.getInstance(EventCancelManager.class);
-        vaultAPI = injector.getInstance(VaultAPI.class);
         spigotResourceManager = injector.getInstance(SpigotResourceManager.class);
         dragonNiteResourceManager = injector.getInstance(DragonNiteResourceManager.class);
 
@@ -136,14 +136,14 @@ public class DragonNiteMC extends JavaPlugin implements DragonNiteMCAPI {
 
     @Override
     public void onEnable() {
-        ((Format) chatFormatManager).setup();
+        ((Format) chatFormatManager).setup(LuckPermsProvider.get());
         ((NameTagHandler) nameTagManager).setup();
         Bukkit.getScheduler().runTask(plugin, () -> {
             getServer().getPluginManager().registerEvents(injector.getInstance(EventListener.class), this);
             Optional.ofNullable(this.getCommand("help")).ifPresent(c -> c.setExecutor(injector.getInstance(HelpCommand.class)));
             getServer().getPluginManager().registerEvents(injector.getInstance(ChatFormatListener.class), this);
         });
-
+        new UpdateFormatListener(this, LuckPermsProvider.get()).register();
         ConsoleCommandSender console = getServer().getConsoleSender();
         console.sendMessage(ChatColor.GREEN + "Initializing DragonNiteMC Libraries");
         if (getServer().getPluginManager().isPluginEnabled("Vault")) {
@@ -266,11 +266,6 @@ public class DragonNiteMC extends JavaPlugin implements DragonNiteMCAPI {
     @Override
     public CoreConfig getCoreConfig() {
         return coreConfig;
-    }
-
-    @Override
-    public VaultAPI getVaultAPI() {
-        return vaultAPI;
     }
 
     @Override
