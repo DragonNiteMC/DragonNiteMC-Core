@@ -1,19 +1,19 @@
-main: com.dragonnite.mc.dnmc.core.main.DragonNiteMC
+main: com.dragonite.mc.dnmc.core.main.DragoniteMC
 version: ${project.version}
-name: DragonNiteMC-Core
+name: DragoniteMC-Core
 api-version: "1.15"
 description: Libraries use
 depend: [ ProtocolLib, LuckPerms ]
 softdepend: [ PlaceholderAPI ]
 authors: [ EricLam, Caxerx ]
 commands:
-  dragonnitemc:
-    aliases: [ dragonnite,dnmc ]
+  dragonitemc:
+    aliases: [ dragonite,dnmc ]
     description: show the version
   help:
     aliases: [ '?', pl ]
     description: show help command
 permissions:
-  dragonnite.admin:
-    description: dragonnite admin permission
+  dragonite.admin:
+    description: dragonite admin permission
     default: false

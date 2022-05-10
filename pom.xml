@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dragonnite.mc</groupId>
-    <artifactId>dragonnitemc-core</artifactId>
+    <groupId>com.dragonite.mc</groupId>
+    <artifactId>dragonitemc-core</artifactId>
     <version>7.6.6</version>
 
     <packaging>pom</packaging>
@@ -13,8 +13,8 @@
     </modules>
 
 
-    <name>DragonNiteMC-Core</name>
-    <description>DragonNiteMC Server Libraries</description>
+    <name>DragoniteMC-Core</name>
+    <description>DragoniteMC Server Libraries</description>
     <url>https://github.com/eric2788/HNMC-Core-API</url>
     <developers>
         <developer>
@@ -26,7 +26,7 @@
         <!-- 指定编码方式,maven3以上可以直接识别,低版本需在build节点声明一个<encode>${project.build.sourceEncoding}</encode> -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 指定源代码和编译代码的java版本 -->
-        <java.version>16</java.version>
+        <java.version>18</java.version>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <module.api>${project.basedir}/API/src</module.api>
@@ -165,12 +165,6 @@
                 <version>2.11.1</version>
                 <scope>provided</scope>
             </dependency>
-            <!--dependency>
-                <groupId>com.comphenix.packetwrapper</groupId>
-                <artifactId>PacketWrapper</artifactId>
-                <version>1.13-R0.1-SNAPSHOT</version>
-                <scope>provided</scope>
-            </dependency-->
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
@@ -261,7 +255,7 @@
                                 <transformers>
                                     <transformer
                                             implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                        <mainClass>DragonNiteMC</mainClass>
+                                        <mainClass>DragoniteMC</mainClass>
                                     </transformer>
                                 </transformers>
                             </configuration>
@@ -321,14 +315,14 @@
                         <linksource>true</linksource>
                         <isOffline>false</isOffline>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <windowtitle>DragonNiteMC-Api</windowtitle>
-                        <doctitle>DragonNiteMC-Api v${project.version}</doctitle>
+                        <windowtitle>DragoniteMC-Api</windowtitle>
+                        <doctitle>DragoniteMC-Api v${project.version}</doctitle>
                         <verbose>true</verbose>
                         <author>true</author>
                         <version>true</version>
                         <linksource>true</linksource>
                         <notimestamp>true</notimestamp>
-                        <bottom><![CDATA[<b>© DragonNiteMC - 2022</b>]]></bottom>
+                        <bottom><![CDATA[<b>© DragoniteMC - 2022</b>]]></bottom>
                         <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
                         <destDir>../docs</destDir>
                         <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>

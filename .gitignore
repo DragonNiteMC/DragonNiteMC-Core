@@ -2,7 +2,7 @@
 **/out/
 */target/
 dependency-reduced-pom.xml
-**/DragonNiteMC-Core.iml
+**/DragoniteMC-Core.iml
 /docs/*
 
 *.iml

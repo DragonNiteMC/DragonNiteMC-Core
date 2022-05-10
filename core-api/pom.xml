@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.dragonnite.mc</groupId>
-        <artifactId>dragonnitemc-core</artifactId>
+        <groupId>com.dragonite.mc</groupId>
+        <artifactId>dragonitemc-core</artifactId>
         <version>7.6.6</version>
     </parent>
 
