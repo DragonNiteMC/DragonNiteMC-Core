@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.dragonnite.mc</groupId>
         <artifactId>dragonnitemc-core</artifactId>
-        <version>7.6.5</version>
+        <version>7.6.6</version>
     </parent>
 
     <artifactId>Plugin</artifactId>
-    <version>${parent.version}.4</version>
+    <version>${parent.version}</version>
 
     <packaging>jar</packaging>
 

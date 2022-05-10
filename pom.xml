@@ -3,7 +3,7 @@
 
     <groupId>com.dragonnite.mc</groupId>
     <artifactId>dragonnitemc-core</artifactId>
-    <version>7.6.5</version>
+    <version>7.6.6</version>
 
     <packaging>pom</packaging>
 
@@ -27,8 +27,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 指定源代码和编译代码的java版本 -->
         <java.version>16</java.version>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
         <module.api>${project.basedir}/API/src</module.api>
         <module.plugin>${project.basedir}/Plugin/src</module.plugin>
         <jackson.version>2.13.2</jackson.version>
