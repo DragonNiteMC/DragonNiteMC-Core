@@ -61,7 +61,6 @@
 
 
     <dependencies>
-
         <dependency>
             <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>
@@ -92,6 +91,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- script engine -->
+            <dependency>
+                <groupId>org.openjdk.nashorn</groupId>
+                <artifactId>nashorn-core</artifactId>
+                <version>15.4</version>
+                <scope>runtime</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>
