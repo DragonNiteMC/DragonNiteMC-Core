@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.dragonnite.mc</groupId>
-        <artifactId>dragonnitemc-core</artifactId>
-        <version>7.6.5</version>
+        <groupId>com.dragonite.mc</groupId>
+        <artifactId>dragonitemc-core</artifactId>
+        <version>7.6.6</version>
     </parent>
 
     <artifactId>Plugin</artifactId>
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.dragonnite.mc</groupId>
+            <groupId>com.dragonite.mc</groupId>
             <artifactId>core-api</artifactId>
             <version>${parent.version}</version>
             <scope>compile</scope>
