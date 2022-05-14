@@ -1,4 +1,4 @@
-# DragonNiteMC-Core
+# DragoniteMC-Core
 Libararies use for DNMC 
 
 

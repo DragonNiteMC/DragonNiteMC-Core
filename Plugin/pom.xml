@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>Plugin</artifactId>
-    <version>${parent.version}.5</version>
+    <version>${parent.version}.4</version>
 
     <packaging>jar</packaging>
 
@@ -50,10 +50,6 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openjdk.nashorn</groupId>
-            <artifactId>nashorn-core</artifactId>
         </dependency>
     </dependencies>
 
