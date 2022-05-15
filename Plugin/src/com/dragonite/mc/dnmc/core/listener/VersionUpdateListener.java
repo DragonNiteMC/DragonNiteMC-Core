@@ -98,8 +98,8 @@ public class VersionUpdateListener implements Listener {
             for (int i = 0; i < length; i++) {
                 int currentNum = i < current.length ? Integer.parseInt(current[i]) : 0;
                 int latestNum = i < latest.length ? Integer.parseInt(latest[i]) : 0;
-                if (currentNum > latestNum) return true;
-                else if (currentNum < latestNum) return false;
+                if (currentNum < latestNum) return true;
+                else if (currentNum > latestNum) return false;
             }
             return true;
         }
