@@ -20,5 +20,6 @@ public class WorldMainCommand extends DefaultCommand {
         this.addSub(new WorldTpCommand(this));
         this.addSub(new WorldSetMainCommand(this));
         this.addSub(new WorldSetSpawnCommand(this));
+        this.addSub(new WorldCheckCommand(this));
     }
 }
