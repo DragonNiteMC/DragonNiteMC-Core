@@ -41,7 +41,9 @@ public final class WorldPropertiesManager {
         yml.set("auto-load", properties.isAutoLoad());
         yml.set("pve", properties.isPve());
         yml.set("vulnerable", properties.isVulnerable());
-        yml.createSection("spawn", properties.getSpawn().serialize());
+        if (properties.getSpawn() != null){
+            yml.createSection("spawn", properties.getSpawn().serialize());
+        }
         return yml;
     }
 

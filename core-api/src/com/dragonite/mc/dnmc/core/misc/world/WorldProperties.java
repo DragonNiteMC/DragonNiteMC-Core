@@ -2,6 +2,8 @@ package com.dragonite.mc.dnmc.core.misc.world;
 
 import org.bukkit.Location;
 
+import javax.annotation.Nullable;
+
 public class WorldProperties {
 
     private boolean pvp;
@@ -44,6 +46,7 @@ public class WorldProperties {
         this.pve = pve;
     }
 
+    @Nullable
     public Location getSpawn() {
         return spawn;
     }
